@@ -1,0 +1,9 @@
+Building NWOcoin
+
+See doc/readme-qt.rst for instructions on building NWOcoin-QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of NWOcoin.
+
+See doc/build-*.txt for instructions on building nwocoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of NWOcoin.
