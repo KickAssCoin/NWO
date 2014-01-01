@@ -833,7 +833,7 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 100 * COIN; // NWOcoin: 100 (Litecoin: 50)
+    int64 nSubsidy = 5 * COIN; // NWOcoin: 100 (Litecoin: 50)
 
     // Subsidy is cut in half every 800000 blocks
     nSubsidy >>= (nHeight / 800000); // NWOcoin: 800k blocks in ~1 years
@@ -841,8 +841,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan_Version1 = 60 * 60; // NWOcoin: 60 minutes (Litecoin: 3.5 days)
-static const int64 nTargetSpacing = 40; // NWOcoin: 40 seconds (~1/4x Litecoin: 2.5 minutes)
+static const int64 nTargetTimespan_Version1 = 30; // NWOcoin: 30 mseconds (Litecoin: 3.5 days)
+static const int64 nTargetSpacing = 10; // NWOcoin: 10 seconds (~1/4x Litecoin: 2.5 minutes)
 static const int64 nInterval_Version1 = nTargetTimespan_Version1 / nTargetSpacing; // NWOcoin: 90 blocks
 
 static const int64 nHeight_Version2 = 208440;
