@@ -24,15 +24,8 @@ namespace Checkpoints
     // + Contains no strange transactions
     //
     static MapCheckpoints mapCheckpoints =
-        boost::assign::map_list_of
-        (     0, hashGenesisBlock)
-        (  8002, uint256("0x73bc3b16d99bbf797f396c9532f80c3b73bb21304280de2efbc5edcb75739234"))
-        ( 18001, uint256("0x5a7a4821aa4fc7ee3dea2f8319e9fa4d991a8c6762e79cb624c64e4cf1031582"))
-        ( 38002, uint256("0x4962437c6d0a450f44c1e40cd38ff220f8122af1517e1329f1abd07fb7791e40"))
-        (160002, uint256("0x478d381c92298614c3a05fb934a4fffc4d3e5b573efbba9b3e8b2ce8d26a0f8f"))
-        (208001, uint256("0x2bb3f8b2d5081aefa0af9f5d8de42bd73a5d89eebf78aa7421cd63dc40a56d4c"))
-        (270001, uint256("0x74988a3179ae6bbc5986e63f71bafc855202502b07e4d9331015eee82df80860"))
-        (290036, uint256("0x145994381e5e4f0e5674adc1ace9a03b670838792f6bd6b650c80466453c2da3"))
+        boost::assign::map_list_of // Yo dawg, this is the secret. Checkpoint 0 hash == Genesis block hash.
+        (         0, uint256("0x8f35d85743c9680618e73c4dc58bd292d9f9141ac34f014ce15c4c8041d3b355"))
         ;
 
     bool CheckBlock(int nHeight, const uint256& hash)
@@ -47,7 +40,6 @@ namespace Checkpoints
     int GetTotalBlocksEstimate()
     {
         if (fTestNet) return 0;
-
         return mapCheckpoints.rbegin()->first;
     }
 
@@ -65,3 +57,4 @@ namespace Checkpoints
         return NULL;
     }
 }
+
